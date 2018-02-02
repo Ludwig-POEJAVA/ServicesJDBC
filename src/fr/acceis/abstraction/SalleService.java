@@ -34,4 +34,22 @@ public class SalleService
 		connexion.close();
 		return salles;
 	}
+
+	public Salle trouverUneSalleEnFonctionDuCours(long idCours) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException
+	{
+		Class.forName("org.hsqldb.jdbcDriver").newInstance();
+		Connection connexion = DriverManager.getConnection("jdbc:hsqldb:data/basejpa", "sa", "");
+		PreparedStatement stmt = connexion.prepareStatement("SELECT * FROM salle");
+
+		ResultSet result = stmt.executeQuery();
+
+		result.next();
+
+		long id = result.getLong("id");
+		String nom = result.getString("nom");
+		Salle salle = new Salle(id, nom);
+
+		connexion.close();
+		return salle;
+	}
 }

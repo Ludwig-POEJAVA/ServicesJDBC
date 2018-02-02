@@ -1,6 +1,7 @@
 package fr.acceis.services;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,15 +30,15 @@ public class TestJdbc
 		cursusEtudiant("21002130");
 		System.out.println("* Fin de la liste des cursus des étudiants 21002128 -> 21002130 :");
 		System.out.println();
-		/*		salleCours(67);
-		/*		listerCoursSalle("i57");
-		/*		listerEtudiantsCours(67);
-		/*		listerProfesseursCursus(10);
-		/*		listerProfesseursMatiere(2);
-		/*		listerProfsEtudiant("21002127");
-		/*		emploiDuTempsSalle("i52");
-		/*		emploiDuTempsEtudiant("21002128");
-		/*		emploiDuTempsProfesseur(55);/**/
+		salleCours(67);
+		listerCoursSalle("i57");
+		listerEtudiantsCours(67);
+		listerProfesseursCursus(10);
+		listerProfesseursMatiere(2);
+		listerProfsEtudiant("21002127");
+		emploiDuTempsSalle("i52");
+		emploiDuTempsEtudiant("21002128");
+		emploiDuTempsProfesseur(55);/**/
 	}
 
 	//	Liste les étudiants
@@ -148,7 +149,7 @@ public class TestJdbc
 			String nomMatiere = result.getString("nomMatiere");
 			String prenomProfesseur = result.getString("prenomProfesseur");
 			String nomProfesseur = result.getString("nomProfesseur");
-			Time horaireDebut = result.getTime("horaireDebut");
+			Date horaireDebut = result.getDate("horaireDebut");
 			Time horaireFin = result.getTime("horaireFin");
 			System.out.println("------------------------------");
 			System.out.println("Cours de " + nomMatiere);
