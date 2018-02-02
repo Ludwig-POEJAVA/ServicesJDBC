@@ -191,7 +191,7 @@ public class TestJdbc
 
 	}
 
-	//	Affiche le nom des professeurss qui enseignent dans un cursus
+	//	Affiche le nom des professeurs qui enseignent dans un cursus
 	private static void listerProfesseursCursus(long idCursus) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException
 	{
 		Class.forName("org.hsqldb.jdbcDriver").newInstance();
